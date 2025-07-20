@@ -11,3 +11,7 @@ You'll notice there's also a Dark Mode toggle. In Light Mode, you can pick from 
 More features to come as I think of them and find ways to implement them. 
 
 Let me know if anything breaks. 
+
+If you feel so inclined, donations are welcome
+
+https://ko-fi.com/danielf91
