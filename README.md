@@ -1,5 +1,6 @@
 # vibe-writer
-A simple, no-frills, no-distractions writing app to help keep your thoughts organized as you write
+A simple, no-frills, no-distractions writing app to help keep your thoughts organized as you write.
+To launch, either use in the browser via GitHub Pages, or download all three files, put them in the same folder, and open the main HTML file in your browser of choice. 
 
 This is my first experiment with vibe coding, done in Google Gemini
 
