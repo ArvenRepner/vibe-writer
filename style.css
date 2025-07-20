@@ -1,0 +1,226 @@
+/*
+  The :root selector defines the default (Light Mode) theme variables.
+  The body[data-theme="dark"] selector overrides these for Dark Mode.
+*/
+:root {
+    --bg-color: #f5f5f5;
+    --editor-bg: #ffffff;
+    --sidebar-bg: #f0f0f0;
+    --text-color: #1e1e1e;
+    --border-color: #d4d4d4;
+    --accent-color: #007acc; /* Default accent is blue */
+    --danger-color: #d12f2f;
+    --button-text-color: #ffffff;
+}
+
+body[data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --editor-bg: #252526;
+    --sidebar-bg: #2a2a2b;
+    --text-color: #d4d4d4;
+    --border-color: #333333;
+    --danger-color: #f44747;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#app-header {
+    padding: 10px 20px;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NEW: Theme controls styling */
+#theme-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+#theme-controls label {
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+#mode-switcher, #accent-color-select {
+    background-color: var(--editor-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    outline: none;
+}
+
+#main-content {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#editor-panel {
+    flex: 3;
+    display: flex;
+}
+
+#main-editor {
+    flex-grow: 1;
+    background-color: var(--editor-bg);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    padding: 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    resize: none;
+}
+
+#sidebar-panel {
+    flex: 1;
+    background-color: var(--sidebar-bg);
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+#sidebar-header h3 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+button {
+    background: var(--accent-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+#add-tab-btn {
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 2px 8px;
+}
+
+#sidebar-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 3px;
+    font-size: 0.9em;
+    border: 1px solid transparent;
+    gap: 8px;
+}
+
+.tab.active {
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+}
+
+.tab:not(.active):hover {
+    background-color: var(--editor-bg);
+}
+
+#sidebar-notes-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+#notes-content {
+    flex-grow: 1;
+}
+
+.note-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.note-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100px;
+    background-color: var(--editor-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    padding: 10px;
+    outline: none;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 4px;
+    font-size: 1.1em;
+}
+
+.delete-btn:hover {
+    color: var(--danger-color);
+}
+
+.delete-note-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+}
+
+#add-note-btn {
+    width: 100%;
+    margin-top: auto;
+    background-color: #3a3a3a;
+}
+
+body[data-theme="light"] #add-note-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#add-note-btn:hover {
+    opacity: 0.8;
+}

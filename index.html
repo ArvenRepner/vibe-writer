@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Writer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <header id="app-header">
+            <select id="mode-switcher">
+                <option value="fiction">Fiction Mode</option>
+                <option value="journalism">Journalism Mode</option>
+                <option value="technical">Technical Mode</option>
+            </select>
+            <div id="theme-controls">
+                <label for="dark-mode-toggle">Dark Mode</label>
+                <input type="checkbox" id="dark-mode-toggle" title="Toggle dark mode">
+                <select id="accent-color-select" title="Select accent color (Light Mode only)"></select>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <div id="editor-panel">
+                <textarea id="main-editor" placeholder="Begin writing..."></textarea>
+            </div>
+
+            <div id="sidebar-panel">
+                <div id="sidebar-header">
+                    <h3 id="sidebar-title">Notes</h3>
+                    <button id="add-tab-btn" title="Add New Tab">+</button>
+                </div>
+                <div id="sidebar-tabs"></div>
+                <div id="sidebar-notes-container">
+                    <div id="notes-content"></div>
+                    <button id="add-note-btn">Add Note</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
